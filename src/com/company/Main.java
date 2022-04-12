@@ -1,35 +1,24 @@
 package com.company;
 
+import com.company.frontcontroller.FrontController;
 import com.company.model.Bird;
 import com.company.test.BirdTest;
-import com.company.utils.Utilities;
-import com.company.frontcontroller.FrontController;
+
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+        System.out.println("\nStarting Birding\n");
+        Scanner reader = new Scanner(System.in);
 
-        Scanner scanner = new Scanner(System.in);
-        BirdDatabase db = new BirdDatabase("MyBirdDatabase");
+        BirdDatabase db = BirdTest.createFakeBirds();
 
-        Utilities.createFakeBirds(birds);
-        Utilities.printBirds(birds);
+        //BirdDatabase db = new BirdDatabase("birds");
+        FrontController.mainLoop(reader, db);
 
-        FrontController.mainLoop(scanner, birds);
-
-        //Exit program
-        System.out.println("\nFinishing Birding, bye, bye!");
-
-
-
-
-        }
+        System.out.println("\nFinishing Birding");
     }
-
-
-
-
 
 }

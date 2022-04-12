@@ -7,12 +7,11 @@ import java.util.HashMap;
 
 public class BirdTest {
 
-    public static void test(HashMap<String, Bird> birdsDatabase) {
-        createFakeBirds(BirdDatabase db);
+    public static void test() {
+        createFakeBirds();
     }
 
-    public static void createFakeBirds(HashMap<String, Bird> birdsDatabase) {
-
+    public static BirdDatabase createFakeBirds() {
         BirdDatabase db = new BirdDatabase("MyBirdDatabase");
 
         Bird bird1 = new Bird("Martinet", "Martinus Martinus");
@@ -21,5 +20,7 @@ public class BirdTest {
         db.addBirdToDatabase(bird1);
         db.addBirdToDatabase(bird2);
         db.addBirdToDatabase(bird3);
+
+        return db;
     }
 }

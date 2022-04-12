@@ -1,35 +1,33 @@
 package com.company.frontcontroller;
 
-import com.company.controller.UserController;
-import com.company.model.Bird;
+import com.company.BirdDatabase;
+import com.company.controller.BirdController;
 import com.company.utils.Utilities;
 import com.company.view.Menu;
 
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class FrontController {
-    public static void mainLoop(Scanner scanner, HashMap<String, Bird> birdsDatabase) {
 
+    public static void mainLoop(Scanner scanner, BirdDatabase db) {
         while (true) {
-
             Menu.mainMenu();
             String command = Utilities.ask(scanner, "Option?");
-
 
             if (command.equals("Quit")) {
                 break;
             } else if (command.equals("Add")) {
-                add(scanner, db);
+                BirdController.add(scanner, db);
             } else if (command.equals("Observation")) {
-                observation(scanner, db);
+                BirdController.observation(scanner, db);
             } else if (command.equals("Show")) {
-                show(scanner, db);
+                BirdController.show(scanner, db);
             } else if (command.equals("Statistics")) {
-                statistics(db);
+                BirdController.statistics(db);
             } else {
                 System.out.println("Unknown command!");
             }
         }
     }
+
 }

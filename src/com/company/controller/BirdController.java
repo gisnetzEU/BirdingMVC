@@ -1,9 +1,10 @@
 package com.company.controller;
 
-import java.util.Scanner;
+import com.company.BirdDatabase;
 import com.company.model.Bird;
-import com.company.service.BirdService;
 import com.company.utils.Utilities;
+
+import java.util.Scanner;
 
 public class BirdController {
 
@@ -23,8 +24,8 @@ public class BirdController {
     }
 
     public static void show(Scanner input, BirdDatabase db) {
-        String birdname = Utilities.ask(input, "Give bird's name to show: ");
-        Bird bird = db.getBirdsDatabase().get(birdname);
+        String birdName = Utilities.ask(input, "Give bird's name to show: ");
+        Bird bird = db.getBirdsDatabase().get(birdName);
         System.out.println(bird.toString());
     }
 

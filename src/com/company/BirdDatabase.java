@@ -1,16 +1,17 @@
 package com.company;
 
+import com.company.model.Bird;
+
 import java.util.HashMap;
 
 public class BirdDatabase {
-
     private String databaseName;
-    private HashMap<String,Bird> database;
+    private HashMap<String, Bird> database;
 
 
     public BirdDatabase(String databaseName) {
         this.databaseName = databaseName;
-        this.database = new HashMap();
+        this.database = new HashMap<>();
     }
 
     @Override

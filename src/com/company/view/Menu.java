@@ -5,9 +5,9 @@ public class Menu {
     public static void mainMenu() {
 
         //print mini-menu with 4 options + quit
-        System.out.println("1-creteBird");
-        System.out.println("2-observation");
-        System.out.println("3-show");
-        System.out.println("4-statistics");
+        System.out.println("Add");
+        System.out.println("Observation");
+        System.out.println("Show");
+        System.out.println("Statistics");
     }
 }
